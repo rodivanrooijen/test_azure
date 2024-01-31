@@ -7,7 +7,9 @@ import azure.functions as func
 from endpoints import start_scraping, scraping_result, price_analysis, location_rating
 
 app = FastAPI()
-
+@app.get("/")
+def root():
+    return "Big Data API"
 
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
